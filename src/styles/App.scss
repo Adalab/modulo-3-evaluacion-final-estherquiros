@@ -1,27 +1,40 @@
+$color-dark: #1a1a2e;
+$color-darker: #0f0f1e;
+$color-gold: #d4af37;
+$color-red: #7b2429;
+$color-green: #006622;
+$color-blue: #0a3a66;
+$color-border: #2a2a3e;
+
+$font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+html {
+  font-family: $font-main;
 }
 
 body {
-  background-color: #555;
-  color: #fff;
+  background-color: $color-darker;
+  color: #e0e0e0;
+  line-height: 1.6;
 }
 
-.header {
-  border-bottom: solid 5px darkcyan;
-
-  .title {
-    line-height: 4rem;
-    padding-inline: 2rem;
-  }
-}
+@import "components/header";
+@import "components/footer";
+@import "components/filters";
+@import "components/character-list";
+@import "components/character-card";
+@import "components/character-detail";
+@import "pages/home-page";
 
 .main {
-  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  min-height: calc(100vh - 200px);
 }

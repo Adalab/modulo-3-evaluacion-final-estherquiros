@@ -1,0 +1,47 @@
+a {
+  text-decoration: none;
+  color: inherit;
+
+  .character-card {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-dark;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: $color-gold;
+    }
+
+    &__img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover &__img {
+      opacity: 0.8;
+    }
+
+    &__name {
+      padding: 1rem;
+      padding-bottom: 0.5rem;
+      color: $color-gold;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    &__species {
+      padding: 0 1rem 1rem;
+      color: #a0a0a0;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+  }
+}

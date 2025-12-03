@@ -1,0 +1,49 @@
+.character-detail {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: $color-dark;
+  border: 1px solid $color-border;
+  border-radius: 6px;
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+
+  &__img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+  }
+
+  &__name {
+    color: $color-gold;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0.75rem 0;
+    color: #c0c0c0;
+    font-size: 1rem;
+
+    &:first-of-type {
+      color: $color-gold;
+      font-weight: 500;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

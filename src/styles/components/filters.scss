@@ -1,0 +1,72 @@
+.filters {
+  margin-bottom: 2rem;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 1.5rem;
+      align-items: flex-end;
+    }
+  }
+
+  label {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+    color: $color-gold;
+    font-size: 1rem;
+    font-weight: 500;
+    flex: 1;
+  }
+
+  input,
+  select {
+    padding: 0.75rem;
+    background-color: $color-dark;
+    border: 1px solid $color-border;
+    color: #e0e0e0;
+    font-family: $font-main;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $color-gold;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+    }
+
+    &::placeholder {
+      color: #888;
+    }
+  }
+
+  select {
+    cursor: pointer;
+  }
+}
+
+.filter__name-label {
+  @media (min-width: 768px) {
+    margin-bottom: auto;
+  }
+}
+
+.filters__houses-label {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.filters__houses-label {
+  @media (min-width: 768px) {
+    margin-bottom: auto;
+  }
+}

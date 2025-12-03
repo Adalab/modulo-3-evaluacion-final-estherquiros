@@ -1,0 +1,17 @@
+.header {
+  background-color: $color-dark;
+  border-bottom: 2px solid $color-gold;
+  padding: 1.5rem;
+
+  img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

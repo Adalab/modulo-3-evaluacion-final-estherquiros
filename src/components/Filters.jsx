@@ -3,7 +3,7 @@ function Filters({ handleInput, handleChange }) {
     <section className="filters">
       <form className="filters__form" onSubmit={(ev) => ev.preventDefault()}>
         <label className="filter__name-label" htmlFor="name">
-          Buscar por personaje
+          Buscar🔍
         </label>
         <input
           className="filters__name-input"

@@ -14,17 +14,27 @@ const getCharacters = () => {
 
 function HomePage() {
   const [characters, setCharacters] = useState([]);
+  const [filters, setFilters] = useState({ name: "", house: "" });
   const [charactersFiltered, setCharactersFiltered] = useState([]);
 
   const handleSearchCharacters = (ev) => {
     ev.preventDefault();
     const nameSearch = ev.target.value;
 
-    const filteredResults = characters.filter((character) => {
-      return character.name.toLowerCase().includes(nameSearch.toLowerCase());
+    setFilters({
+      ...filters,
+      name: nameSearch,
     });
+  };
 
-    setCharactersFiltered(filteredResults);
+  const handleSelectHouse = (ev) => {
+    ev.preventDefault();
+    const selectedHouse = ev.target.value;
+
+    setFilters({
+      ...filters,
+      house: selectedHouse,
+    });
   };
 
   useEffect(() => {
@@ -34,9 +44,28 @@ function HomePage() {
     });
   }, []);
 
+  useEffect(() => {
+    const filteredResults = characters
+      .filter((character) => {
+        return character.name
+          .toLowerCase()
+          .includes(filters.name.toLowerCase());
+      })
+      .filter((character) => {
+        return character.house
+          .toLowerCase()
+          .includes(filters.house.toLowerCase());
+      });
+
+    setCharactersFiltered(filteredResults);
+  }, [filters]);
+
   return (
     <section className="home-page">
-      <Filters handleInput={handleSearchCharacters} />
+      <Filters
+        handleInput={handleSearchCharacters}
+        handleChange={handleSelectHouse}
+      />
       <CharacterList characters={charactersFiltered} />
     </section>
   );

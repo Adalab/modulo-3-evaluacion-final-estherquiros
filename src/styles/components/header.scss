@@ -2,6 +2,9 @@
   background-color: $color-dark;
   border-bottom: 2px solid $color-gold;
   padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   img {
     max-width: 200px;

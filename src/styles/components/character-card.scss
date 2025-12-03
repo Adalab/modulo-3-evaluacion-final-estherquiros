@@ -6,7 +6,8 @@ a {
     all: unset;
     display: flex;
     flex-direction: column;
-    background-color: $color-dark;
+    background-color: #0f0f1eb1;
+    backdrop-filter: blur(10px);
     border: 1px solid $color-border;
     border-radius: 6px;
     overflow: hidden;

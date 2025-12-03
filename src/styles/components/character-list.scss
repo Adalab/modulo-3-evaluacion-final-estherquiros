@@ -13,3 +13,12 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+.no-results {
+  font-size: xx-large;
+  color: $color-gold;
+  padding: 20px;
+  background-color: #0f0f1eb1;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+}

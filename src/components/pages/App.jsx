@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router";
 
-import "../styles/App.scss";
-import Header from "./layout/Header";
-import Footer from "./layout/Footer";
-import HomePage from "./pages/HomePage";
+import "../../styles/App.scss";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
+import HomePage from "./HomePage";
 
 function App() {
   return (

@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import CharacterCard from "../CharacterCard";
 
 const getCharacters = () => {
   return fetch("https://hp-api.onrender.com/api/characters")
@@ -10,10 +11,22 @@ const getCharacters = () => {
 };
 
 function HomePage() {
+  const [characters, setCharacters] = useState([]);
+
   useEffect(() => {
-    getCharacters();
+    getCharacters().then((charactersResponse) => {
+      setCharacters(charactersResponse);
+    });
   }, []);
 
-  return <section className="home-page"></section>;
+  return (
+    <section className="home-page">
+      <ul className="characters-list">
+        {characters.map((character) => {
+          return <CharacterCard character={character} />;
+        })}
+      </ul>
+    </section>
+  );
 }
 export default HomePage;

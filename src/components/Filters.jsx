@@ -19,10 +19,10 @@ function Filters({ handleInput, handleChange }) {
           onChange={handleChange}
         >
           <option value={""}>Todas las casas</option>
-          <option value={"Gryffindor"}>Gryffindor</option>
-          <option value={"Slytherin"}>Slytherin</option>
-          <option value={"Hufflepuff"}>Hufflepuff</option>
-          <option value={"Ravenclaw"}>Ravenclaw</option>
+          <option value={"Gryffindor"}>Gryffindor🦁</option>
+          <option value={"Slytherin"}>Slytherin🐍</option>
+          <option value={"Hufflepuff"}>Hufflepuff🦡</option>
+          <option value={"Ravenclaw"}>Ravenclaw🦅</option>
         </select>
       </form>
     </section>

@@ -1,5 +1,13 @@
 import CharacterCard from "./CharacterCard";
-function CharacterList({ characters }) {
+
+function CharacterList({ characters, searchText }) {
+  if (characters.length === 0) {
+    return (
+      <p className="no-results">
+        No hay ningún personaje que coincida con la palabra {searchText}
+      </p>
+    );
+  }
   return (
     <ul className="characters-list">
       {characters.map((character) => {
@@ -8,4 +16,5 @@ function CharacterList({ characters }) {
     </ul>
   );
 }
+
 export default CharacterList;

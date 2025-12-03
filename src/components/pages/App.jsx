@@ -5,6 +5,7 @@ import "../../styles/App.scss";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import HomePage from "./HomePage";
+import CharacterDetail from "../CharacterDetail";
 
 const getCharacters = () => {
   return fetch("https://hp-api.onrender.com/api/characters")
@@ -29,7 +30,10 @@ function App() {
       <main className="main">
         <Routes>
           <Route path="/" element={<HomePage characters={characters} />} />
-          <Route path="character/:id" element={<h1>Details page</h1>} />
+          <Route
+            path="/character/:id"
+            element={<CharacterDetail characters={characters} />}
+          />
         </Routes>
       </main>
       <Footer />

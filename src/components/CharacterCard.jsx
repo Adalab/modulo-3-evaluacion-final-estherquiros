@@ -5,7 +5,7 @@ function CharacterCard({ character }) {
       <p className="character-card__species">{character.especies}</p>
       <img
         className="character-card__img"
-        src={character.image}
+        src={character.image || "images/avatar-placeholder.png"}
         alt={`Imagen de ${character.name}`}
       />
     </li>

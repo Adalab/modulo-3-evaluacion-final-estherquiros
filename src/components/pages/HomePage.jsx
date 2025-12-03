@@ -3,19 +3,9 @@ import { useEffect, useState } from "react";
 import CharacterList from "../CharacterList";
 import Filters from "../Filters";
 
-const getCharacters = () => {
-  return fetch("https://hp-api.onrender.com/api/characters")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      return data;
-    });
-};
-
-function HomePage() {
-  const [characters, setCharacters] = useState([]);
+function HomePage({ characters }) {
   const [filters, setFilters] = useState({ name: "", house: "" });
-  const [charactersFiltered, setCharactersFiltered] = useState([]);
+  const [charactersFiltered, setCharactersFiltered] = useState(characters);
 
   const handleSearchCharacters = (ev) => {
     ev.preventDefault();
@@ -38,13 +28,6 @@ function HomePage() {
   };
 
   useEffect(() => {
-    getCharacters().then((charactersResponse) => {
-      setCharacters(charactersResponse);
-      setCharactersFiltered(charactersResponse);
-    });
-  }, []);
-
-  useEffect(() => {
     const filteredResults = characters
       .filter((character) => {
         return character.name
@@ -58,7 +41,7 @@ function HomePage() {
       });
 
     setCharactersFiltered(filteredResults);
-  }, [filters]);
+  }, [filters, characters]);
 
   return (
     <section className="home-page">

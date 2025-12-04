@@ -12,8 +12,8 @@ function CharacterDetail({ characters }) {
   useEffect(() => {
     if (characters.length === 0) return;
 
-    const character = characters.find((c) => {
-      return c.id === params.id;
+    const character = characters.find((char) => {
+      return char.id === params.id;
     });
 
     setCharacter(character);

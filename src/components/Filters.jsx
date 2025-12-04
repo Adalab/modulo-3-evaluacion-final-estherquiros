@@ -1,4 +1,4 @@
-function Filters({ handleInput, handleChange }) {
+function Filters({ handleInput, handleChange, handleGenderChange }) {
   return (
     <section className="filters">
       <form className="filters__form" onSubmit={(ev) => ev.preventDefault()}>
@@ -24,6 +24,32 @@ function Filters({ handleInput, handleChange }) {
           <option value={"Hufflepuff"}>🦡 Hufflepuff</option>
           <option value={"Ravenclaw"}> 🦅Ravenclaw</option>
         </select>
+        <div>
+          <input
+            type="radio"
+            id="all"
+            name="gender"
+            value=""
+            onChange={handleGenderChange}
+          />
+          <label for="all">Todos</label>
+          <input
+            type="radio"
+            id="female"
+            name="gender"
+            value="female"
+            onChange={handleGenderChange}
+          />
+          <label for="female">Mujer</label>
+          <input
+            type="radio"
+            id="male"
+            name="gender"
+            value="male"
+            onChange={handleGenderChange}
+          />
+          <label for="male">Hombre</label>
+        </div>
       </form>
     </section>
   );

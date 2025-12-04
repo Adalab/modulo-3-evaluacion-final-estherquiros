@@ -25,6 +25,24 @@ function CharacterDetail({ characters }) {
     navigate("/");
   };
 
+  const getHouseLogo = (house) => {
+    if (!house) return null;
+    const houseLower = house.toLowerCase();
+
+    if (houseLower === "gryffindor") {
+      return "images/icons8-hogwarts-legacy-gryffindor-48.png";
+    } else if (houseLower === "hufflepuff") {
+      return "images/icons8-hogwarts-legacy-hufflepuff-48.png";
+    } else if (houseLower === "ravenclaw") {
+      return "images/icons8-hogwarts-legacy-ravenclaw-48.png";
+    } else if (houseLower === "slytherin") {
+      return "images/icons8-hogwarts-legacy-slytherin-48.png";
+    }
+    return null;
+  };
+
+  const houseLogo = getHouseLogo(character.house);
+
   return (
     <section className="character-detail">
       <img
@@ -32,7 +50,16 @@ function CharacterDetail({ characters }) {
         src={character.image || "images/avatar-placeholder.png"}
         alt={`Imagen de ${character.name}`}
       />
-      <h2 className="character-detail__name">{character.name}</h2>
+      <h2 className="character-detail__name">
+        {character.name}
+        {houseLogo && (
+          <img
+            src={houseLogo}
+            alt={`Logo de ${character.house}`}
+            className="character-detail__house-logo"
+          />
+        )}
+      </h2>
       <p className="character-detail__alive">
         <span className="character-detail__desc">Estatus: </span>
         {character.alive ? "Alive" : "Dead"}

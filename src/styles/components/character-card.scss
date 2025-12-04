@@ -36,6 +36,15 @@ a {
       color: $color-gold;
       font-size: 1.1rem;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    &__house-logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
     }
 
     &__species {

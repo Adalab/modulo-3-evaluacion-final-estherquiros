@@ -9,7 +9,7 @@ function Filters({
       <form className="filters__form" onSubmit={(ev) => ev.preventDefault()}>
         <div className="filters__name">
           <label className="filter__name-label" htmlFor="name">
-            Buscar🔍
+            Buscar 🔍
           </label>
           <input
             className="filters__name-input"
@@ -41,7 +41,7 @@ function Filters({
             value=""
             onChange={handleGenderChange}
           />
-          <label for="all">Todos</label>
+          <label htmlFor="all">Todos</label>
           <input
             type="radio"
             id="female"
@@ -49,7 +49,7 @@ function Filters({
             value="female"
             onChange={handleGenderChange}
           />
-          <label for="female">Mujer</label>
+          <label htmlFor="female">Mujer</label>
           <input
             type="radio"
             id="male"
@@ -57,7 +57,7 @@ function Filters({
             value="male"
             onChange={handleGenderChange}
           />
-          <label for="male">Hombre</label>
+          <label htmlFor="male">Hombre</label>
         </div>
         <div className="filters__alphabetic">
           <input
@@ -67,7 +67,7 @@ function Filters({
             value=""
             onChange={handleAlphabeticChange}
           />
-          <label for="all">A-Z</label>
+          <label htmlFor="all">A-Z</label>
         </div>
       </form>
     </section>

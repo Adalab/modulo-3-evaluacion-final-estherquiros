@@ -1,4 +1,9 @@
-function Filters({ handleInput, handleChange, handleGenderChange }) {
+function Filters({
+  handleInput,
+  handleChange,
+  handleGenderChange,
+  handleAlphabeticChange,
+}) {
   return (
     <section className="filters">
       <form className="filters__form" onSubmit={(ev) => ev.preventDefault()}>
@@ -49,6 +54,16 @@ function Filters({ handleInput, handleChange, handleGenderChange }) {
             onChange={handleGenderChange}
           />
           <label for="male">Hombre</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="all"
+            name="alphabetic"
+            value=""
+            onChange={handleAlphabeticChange}
+          />
+          <label for="all">A-Z</label>
         </div>
       </form>
     </section>

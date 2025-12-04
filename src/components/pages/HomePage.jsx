@@ -4,7 +4,12 @@ import CharacterList from "../CharacterList";
 import Filters from "../Filters";
 
 function HomePage({ characters }) {
-  const [filters, setFilters] = useState({ name: "", house: "", gender: "" });
+  const [filters, setFilters] = useState({
+    name: "",
+    house: "",
+    gender: "",
+    alphabetic: false,
+  });
   const [charactersFiltered, setCharactersFiltered] = useState(characters);
 
   const handleSearchCharacters = (ev) => {
@@ -36,6 +41,15 @@ function HomePage({ characters }) {
     });
   };
 
+  const handleSelectAlphabetic = (ev) => {
+    const selectedAlphabetic = ev.target.checked;
+
+    setFilters({
+      ...filters,
+      alphabetic: selectedAlphabetic,
+    });
+  };
+
   useEffect(() => {
     const filteredResults = characters
       .filter((character) => {
@@ -52,6 +66,10 @@ function HomePage({ characters }) {
         return character.gender === filters.gender;
       });
 
+    if (filters.alphabetic) {
+      filteredResults.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
     setCharactersFiltered(filteredResults);
   }, [filters, characters]);
 
@@ -61,6 +79,7 @@ function HomePage({ characters }) {
         handleInput={handleSearchCharacters}
         handleChange={handleSelectHouse}
         handleGenderChange={handleSelectGender}
+        handleAlphabeticChange={handleSelectAlphabetic}
       />
       <CharacterList characters={charactersFiltered} />
     </section>
